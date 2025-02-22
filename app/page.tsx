@@ -17,7 +17,7 @@ export default function Home() {
           />
           <div className="text-center space-y-4">
             <h2 className="text-2xl text-white/80 font-normal font-red-hat tracking-wide">Want to help Rocky Linux? Tell me...</h2>
-            <h1 className="text-6xl font-bold text-white font-red-hat tracking-tight">what's your area of interest?</h1>
+            <h1 className="text-6xl font-bold text-white font-red-hat tracking-tight">what&apos;s your area of interest?</h1>
           </div>
         </div>
         <QuestionNode node={questionsData.tree} />

@@ -1,14 +1,18 @@
 declare module "*.yml" {
   interface Node {
     id: string
-    title: string
-    question?: string
+    titleKey: string
+    subtitleKey?: string
     options?: Node[]
     link?: string
   }
 
   const content: {
-    tree: Node
+    tree: {
+      segueKey1: string
+      segueKey2: string
+      options: Node[]
+    }
   }
   export default content
 } 

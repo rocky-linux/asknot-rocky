@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Red_Hat_Display } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/language-context";
+import en from "@/translations/en";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -13,8 +15,8 @@ const redHatDisplay = Red_Hat_Display({
 });
 
 export const metadata: Metadata = {
-  title: "What can I do for Rocky Linux?",
-  description: "Find out how you can contribute to Rocky Linux",
+  title: en.meta.title,
+  description: en.meta.description,
 };
 
 export default function RootLayout({
@@ -24,7 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${redHatDisplay.variable}`}>
-      <body className="font-inter">{children}</body>
+      <body className="font-inter">
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

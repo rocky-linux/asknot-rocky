@@ -4,7 +4,33 @@ import { createContext, useContext, useState } from 'react'
 import en from '@/translations/en'
 import es from '@/translations/es'
 
-const translations = { en, es }
+type TranslationValue = string | { [key: string]: TranslationValue }
+
+interface Translations extends Record<string, TranslationValue> {
+  meta: {
+    title: string
+    description: string
+  }
+  common: {
+    soundsAwesome: string
+    notOnYourLife: string
+  }
+  home: {
+    wantToHelp: string
+    areaOfInterest: string
+    footer: {
+      generatedBy: string
+      inspiredBy: string
+    }
+  }
+  questions: {
+    segue1: string
+    segue2: string
+    [key: string]: TranslationValue
+  }
+}
+
+const translations: { [key: string]: Translations } = { en, es }
 type Language = keyof typeof translations
 
 const LanguageContext = createContext<{
@@ -22,13 +48,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string) => {
     const keys = key.split('.')
-    let value: any = translations[language]
+    let value: TranslationValue = translations[language]
     
     for (const k of keys) {
-      value = value?.[k]
+      if (typeof value === 'object') {
+        value = value[k]
+      } else {
+        return key
+      }
     }
     
-    return value || key
+    return typeof value === 'string' ? value : key
   }
 
   return (

@@ -9,6 +9,13 @@ import { LanguageSwitcher } from "@/components/language-switcher"
 export default function Home() {
   const { t } = useLanguage()
 
+  // Create a root node containing all categories
+  const rootNode = {
+    id: "root",
+    titleKey: "home.areaOfInterest",
+    options: questionsData.tree.options
+  }
+
   return (
     <main className="min-h-screen flex flex-col bg-gradient-to-b from-[#10B981] to-[#0a8f63] p-4 text-white">
       <div className="flex-1 flex items-center justify-center">
@@ -26,12 +33,9 @@ export default function Home() {
               <h2 className="text-xl md:text-2xl text-white/80 font-normal font-red-hat tracking-wide">
                 {t('home.wantToHelp')}
               </h2>
-              <h1 className="text-3xl md:text-4xl font-bold text-white font-red-hat tracking-tight">
-                {t('home.areaOfInterest')}
-              </h1>
             </div>
           </div>
-          <QuestionNode node={questionsData.tree.options[0]} />
+          <QuestionNode node={rootNode} />
         </div>
       </div>
       <footer className="w-full p-4 flex flex-col md:flex-row items-center gap-4 md:gap-0 md:justify-between text-sm text-center md:text-left mt-auto">

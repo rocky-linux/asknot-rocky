@@ -64,7 +64,43 @@ export default {
     },
     community: {
       title: "COMUNIDAD",
-      subtitle: "conectando los puntos"
+      subtitle: "conectando los puntos",
+      advocacy: {
+        title: "Promoción",
+        subtitle: "difundiendo el mensaje"
+      },
+      support: {
+        title: "Soporte al Usuario",
+        subtitle: "ayudando a otros a tener éxito"
+      },
+      events: {
+        title: "Organización de Eventos",
+        subtitle: "uniendo a la gente"
+      }
+    },
+    qa: {
+      title: "PRUEBAS",
+      subtitle: "si no está probado, está roto",
+      bugHunting: {
+        title: "Búsqueda de Errores",
+        subtitle: "encontrando los fallos"
+      },
+      testAutomation: {
+        title: "Automatización de Pruebas",
+        subtitle: "aseguramiento de calidad automatizado"
+      }
+    },
+    packaging: {
+      title: "EMPAQUETADO",
+      subtitle: "construyendo la distribución",
+      rpm: {
+        title: "Empaquetado RPM",
+        subtitle: "creando paquetes"
+      },
+      modules: {
+        title: "Construcción de Módulos",
+        subtitle: "componiendo la distribución"
+      }
     }
   }
 } 

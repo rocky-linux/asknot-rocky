@@ -64,7 +64,43 @@ export default {
     },
     community: {
       title: "COMMUNITY",
-      subtitle: "connecting the dots"
+      subtitle: "connecting the dots",
+      advocacy: {
+        title: "Advocacy",
+        subtitle: "spreading the word"
+      },
+      support: {
+        title: "User Support",
+        subtitle: "helping others succeed"
+      },
+      events: {
+        title: "Event Organization",
+        subtitle: "bringing people together"
+      }
+    },
+    qa: {
+      title: "TESTING",
+      subtitle: "if it's not tested, it's broken",
+      bugHunting: {
+        title: "Bug Hunting",
+        subtitle: "finding the glitches"
+      },
+      testAutomation: {
+        title: "Test Automation",
+        subtitle: "automated quality assurance"
+      }
+    },
+    packaging: {
+      title: "PACKAGING",
+      subtitle: "building the distribution",
+      rpm: {
+        title: "RPM Packaging",
+        subtitle: "creating packages"
+      },
+      modules: {
+        title: "Module Building",
+        subtitle: "composing the distro"
+      }
     }
   }
 } 

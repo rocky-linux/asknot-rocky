@@ -17,7 +17,6 @@ export function QuestionNode({ node }: { node: Node }) {
   const { t } = useLanguage()
   const [currentNode, setCurrentNode] = useState(node)
   const [optionIndex, setOptionIndex] = useState(0)
-  const [noClickCount, setNoClickCount] = useState(0)
   const [showEasterEgg, setShowEasterEgg] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const clickTimestampsRef = useRef<number[]>([])
@@ -29,7 +28,7 @@ export function QuestionNode({ node }: { node: Node }) {
 
   const handleNoClick = () => {
     const now = Date.now()
-    const recentClicks = clickTimestampsRef.current.filter(time => now - time < 2000) // Only count clicks within last 2 seconds
+    const recentClicks = clickTimestampsRef.current.filter(time => now - time < 2000)
     clickTimestampsRef.current = [...recentClicks, now]
 
     if (clickTimestampsRef.current.length >= 5 && !showEasterEgg) {

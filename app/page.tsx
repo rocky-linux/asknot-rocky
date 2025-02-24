@@ -9,7 +9,6 @@ import { LanguageSwitcher } from "@/components/language-switcher"
 export default function Home() {
   const { t } = useLanguage()
 
-  // Create a root node containing all categories
   const rootNode = {
     id: "root",
     titleKey: "home.areaOfInterest",

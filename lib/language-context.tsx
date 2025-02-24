@@ -14,6 +14,8 @@ interface Translations extends Record<string, TranslationValue> {
   common: {
     soundsAwesome: string
     notOnYourLife: string
+    easterEgg: string
+    startOver: string
   }
   home: {
     wantToHelp: string

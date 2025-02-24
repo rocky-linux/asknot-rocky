@@ -5,7 +5,9 @@ export default {
   },
   common: {
     soundsAwesome: "Sounds awesome",
-    notOnYourLife: "Not on your life"
+    notOnYourLife: "Not on your life",
+    easterEgg: "Sorry, no cake for you! 🍰",
+    startOver: "Start over"
   },
   home: {
     wantToHelp: "Want to help Rocky Linux? Tell me...",

@@ -33,6 +33,7 @@ export default function Home() {
               <h2 className="text-xl md:text-2xl text-white/80 font-normal font-red-hat tracking-wide">
                 {t('home.wantToHelp')}
               </h2>
+              <h1 className="text-2xl md:text-4xl font-bold text-white font-red-hat tracking-tight">{t('home.areaOfInterest')}</h1>
             </div>
           </div>
           <QuestionNode node={rootNode} />

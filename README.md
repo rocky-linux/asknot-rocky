@@ -1,7 +1,5 @@
 # asknot-rocky
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Frockylinux.org)](https://rockylinux.org)
-
 The official source for [whatcanidoforrockylinux.org](https://whatcanidoforrockylinux.org), inspired by [asknot-ng](https://github.com/fedora-infra/asknot-ng)
 
 ## Start Development Server

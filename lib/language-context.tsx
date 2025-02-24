@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from 'react'
 import en from '@/translations/en'
 import es from '@/translations/es'
 
-type TranslationValue = string | { [key: string]: TranslationValue }
+type TranslationValue = string | string[] | { [key: string]: TranslationValue }
 
 interface Translations extends Record<string, TranslationValue> {
   meta: {
@@ -14,7 +14,7 @@ interface Translations extends Record<string, TranslationValue> {
   common: {
     soundsAwesome: string
     notOnYourLife: string
-    easterEgg: string
+    easterEggs: string[]
     startOver: string
   }
   home: {
@@ -38,7 +38,7 @@ type Language = keyof typeof translations
 const LanguageContext = createContext<{
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: (key: string) => string | string[]
 }>({
   language: 'en',
   setLanguage: () => {},
@@ -48,19 +48,22 @@ const LanguageContext = createContext<{
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('en')
 
-  const t = (key: string) => {
+  const t = (key: string): string | string[] => {
     const keys = key.split('.')
     let value: TranslationValue = translations[language]
     
     for (const k of keys) {
-      if (typeof value === 'object') {
-        value = value[k]
+      if (typeof value === 'object' && !Array.isArray(value)) {
+        value = value[k as keyof typeof value]
       } else {
-        return key
+        return typeof value === 'string' ? value : key
       }
     }
     
-    return typeof value === 'string' ? value : key
+    if (Array.isArray(value) || typeof value === 'string') {
+      return value
+    }
+    return key
   }
 
   return (

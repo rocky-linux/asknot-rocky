@@ -6,7 +6,13 @@ export default {
   common: {
     soundsAwesome: "Sounds awesome",
     notOnYourLife: "Not on your life",
-    easterEgg: "Sorry, no cake for you! 🥲",
+    easterEggs: [
+      "Oh, you're one of those button smashers...",
+      "Found the QA tester!",
+      "Very funny. Hilarious even.",
+      "Did that button hurt you somehow?",
+      "Achievement unlocked: Button Masher"
+    ],
     startOver: "Start over"
   },
   home: {

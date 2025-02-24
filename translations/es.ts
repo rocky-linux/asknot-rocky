@@ -6,7 +6,13 @@ export default {
   common: {
     soundsAwesome: "¡Suena genial!",
     notOnYourLife: "¡Ni en sueños!",
-    easterEgg: "¡Lo siento, no hay pastel para ti! 🥲",
+    easterEggs: [
+      "Ah, eres de los que machacan botones...",
+      "¡Encontramos al tester de QA!",
+      "Qué gracioso. Hilarante, incluso.",
+      "¿Te hizo algo malo este botón?",
+      "Logro desbloqueado: Machacabotones"
+    ],
     startOver: "Empezar de nuevo"
   },
   home: {

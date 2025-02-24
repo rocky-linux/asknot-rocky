@@ -20,22 +20,34 @@ export function QuestionNode({ node }: { node: Node }) {
   const [noClickCount, setNoClickCount] = useState(0)
   const [showEasterEgg, setShowEasterEgg] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const clickTimestampsRef = useRef<number[]>([])
   const currentOption = currentNode.options?.[optionIndex]
 
   useEffect(() => {
     audioRef.current = new Audio('/sounds/sad.mp3')
   }, [])
 
-  useEffect(() => {
-    if (noClickCount >= 5 && !showEasterEgg) {
+  const handleNoClick = () => {
+    const now = Date.now()
+    const recentClicks = clickTimestampsRef.current.filter(time => now - time < 2000) // Only count clicks within last 2 seconds
+    clickTimestampsRef.current = [...recentClicks, now]
+
+    if (clickTimestampsRef.current.length >= 5 && !showEasterEgg) {
       setShowEasterEgg(true)
       audioRef.current?.play()
       setTimeout(() => {
         setShowEasterEgg(false)
-        setNoClickCount(0)
+        clickTimestampsRef.current = []
       }, 18000)
     }
-  }, [noClickCount, showEasterEgg])
+
+    if (currentNode.options && optionIndex + 1 < currentNode.options.length) {
+      setOptionIndex(optionIndex + 1)
+    } else {
+      setCurrentNode(node)
+      setOptionIndex(0)
+    }
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -91,15 +103,7 @@ export function QuestionNode({ node }: { node: Node }) {
               </button>
               <button
                 className="flex items-center justify-center gap-2 py-3 md:py-4 px-6 md:px-8 text-lg md:text-xl font-medium bg-[#DC2626] hover:bg-[#B91C1C] text-white rounded-full transition-colors shadow-lg font-red-hat"
-                onClick={() => {
-                  setNoClickCount(count => count + 1)
-                  if (currentNode.options && optionIndex + 1 < currentNode.options.length) {
-                    setOptionIndex(optionIndex + 1)
-                  } else {
-                    setCurrentNode(node)
-                    setOptionIndex(0)
-                  }
-                }}
+                onClick={handleNoClick}
               >
                 <X className="w-5 h-5 md:w-6 md:h-6" />
                 {t('common.notOnYourLife')}

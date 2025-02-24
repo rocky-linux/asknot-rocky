@@ -6,7 +6,7 @@ export default {
   common: {
     soundsAwesome: "¡Suena genial!",
     notOnYourLife: "¡Ni en sueños!",
-    easterEgg: "¡Lo siento, no hay pastel para ti! 🍰",
+    easterEgg: "¡Lo siento, no hay pastel para ti! 🥲",
     startOver: "Empezar de nuevo"
   },
   home: {

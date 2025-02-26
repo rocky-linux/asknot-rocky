@@ -1,0 +1,140 @@
+{
+  "tree": {
+    "segueKey1": "Want to help Rocky Linux? Tell me...",
+    "segueKey2": "What's your area of interest?",
+    "options": [
+      {
+        "id": "design",
+        "titleKey": "DESIGN!",
+        "subtitleKey": "pixel ninjas",
+        "options": [
+          {
+            "id": "websites",
+            "titleKey": "Website Design",
+            "subtitleKey": "crafting user experiences",
+            "link": "https://github.com/rocky-linux/rockylinux.org"
+          },
+          {
+            "id": "graphics",
+            "titleKey": "Graphics Design",
+            "subtitleKey": "visual storytelling",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/design"
+          },
+          {
+            "id": "ux",
+            "titleKey": "UX Design",
+            "subtitleKey": "making things intuitive",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/ux"
+          }
+        ]
+      },
+      {
+        "id": "coding",
+        "titleKey": "CODING",
+        "subtitleKey": "hacking the gibson",
+        "options": [
+          {
+            "id": "web-dev",
+            "titleKey": "Web Development",
+            "subtitleKey": "building the web presence",
+            "link": "https://github.com/rocky-linux/rockylinux.org"
+          },
+          {
+            "id": "system",
+            "titleKey": "System Programming",
+            "subtitleKey": "core system development",
+            "link": "https://github.com/rocky-linux/rocky"
+          },
+          {
+            "id": "automation",
+            "titleKey": "Automation",
+            "subtitleKey": "making things efficient",
+            "link": "https://github.com/rocky-linux/ansible-role-rocky-tools"
+          }
+        ]
+      },
+      {
+        "id": "documentation",
+        "titleKey": "DOCUMENTATION",
+        "subtitleKey": "wordsmithery",
+        "options": [
+          {
+            "id": "technical-writing",
+            "titleKey": "Technical Writing",
+            "subtitleKey": "explaining the complex",
+            "link": "https://github.com/rocky-linux/documentation"
+          },
+          {
+            "id": "translation",
+            "titleKey": "Translation",
+            "subtitleKey": "breaking language barriers",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/translation"
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "titleKey": "COMMUNITY",
+        "subtitleKey": "connecting the dots",
+        "options": [
+          {
+            "id": "advocacy",
+            "titleKey": "Advocacy",
+            "subtitleKey": "spreading the word",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/community"
+          },
+          {
+            "id": "support",
+            "titleKey": "User Support",
+            "subtitleKey": "helping others succeed",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/support"
+          },
+          {
+            "id": "events",
+            "titleKey": "Event Organization",
+            "subtitleKey": "bringing people together",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/events"
+          }
+        ]
+      },
+      {
+        "id": "qa",
+        "titleKey": "TESTING",
+        "subtitleKey": "if it's not tested, it's broken",
+        "options": [
+          {
+            "id": "bug-hunting",
+            "titleKey": "Bug Hunting",
+            "subtitleKey": "finding the glitches",
+            "link": "https://github.com/rocky-linux/rocky/issues"
+          },
+          {
+            "id": "test-automation",
+            "titleKey": "Test Automation",
+            "subtitleKey": "automated quality assurance",
+            "link": "https://github.com/rocky-linux/testing"
+          }
+        ]
+      },
+      {
+        "id": "packaging",
+        "titleKey": "PACKAGING",
+        "subtitleKey": "building the distribution",
+        "options": [
+          {
+            "id": "rpm-packaging",
+            "titleKey": "RPM Packaging",
+            "subtitleKey": "creating packages",
+            "link": "https://github.com/rocky-linux/rpms"
+          },
+          {
+            "id": "module-building",
+            "titleKey": "Module Building",
+            "subtitleKey": "composing the distro",
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/packaging"
+          }
+        ]
+      }
+    ]
+  }
+} 

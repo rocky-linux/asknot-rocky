@@ -3,6 +3,32 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+const POSITIVE_RESPONSES = [
+  "Sounds Awesome!",
+  "Yes, Please!",
+  "Let's Do It!",
+  "Count Me In!",
+  "Absolutely!",
+  "That's Perfect!",
+  "I'm In!",
+  "Show Me More!",
+]
+
+const NEGATIVE_RESPONSES = [
+  "Not on your life!",
+  "No Thanks!",
+  "Pass!",
+  "Next Option!",
+  "Not For Me!",
+  "Skip This!",
+  "Nope!",
+  "Let's Try Something Else!",
+]
+
+const getRandomItem = (array: string[]) => {
+  return array[Math.floor(Math.random() * array.length)]
+}
+
 interface Node {
   id: string
   titleKey: string
@@ -14,6 +40,8 @@ interface Node {
 export function QuestionNode({ node }: { node: Node }) {
   const [currentNode, setCurrentNode] = useState(node)
   const [optionIndex, setOptionIndex] = useState(0)
+  const [positiveButtonText, setPositiveButtonText] = useState(getRandomItem(POSITIVE_RESPONSES))
+  const [negativeButtonText, setNegativeButtonText] = useState(getRandomItem(NEGATIVE_RESPONSES))
   const currentOption = currentNode.options?.[optionIndex]
 
   return (
@@ -49,10 +77,12 @@ export function QuestionNode({ node }: { node: Node }) {
                   } else if (currentOption.options) {
                     setCurrentNode(currentOption)
                     setOptionIndex(0)
+                    setPositiveButtonText(getRandomItem(POSITIVE_RESPONSES))
+                    setNegativeButtonText(getRandomItem(NEGATIVE_RESPONSES))
                   }
                 }}
               >
-                Sounds Awesome!
+                {positiveButtonText}
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.02 }}
@@ -61,12 +91,14 @@ export function QuestionNode({ node }: { node: Node }) {
                 onClick={() => {
                   if (currentNode.options && optionIndex + 1 < currentNode.options.length) {
                     setOptionIndex(optionIndex + 1)
+                    setPositiveButtonText(getRandomItem(POSITIVE_RESPONSES))
+                    setNegativeButtonText(getRandomItem(NEGATIVE_RESPONSES))
                   } else {
                     window.location.reload()
                   }
                 }}
               >
-                Not on your life!
+                {negativeButtonText}
               </motion.button>
             </div>
           </motion.div>

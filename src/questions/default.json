@@ -5,133 +5,140 @@
     "options": [
       {
         "id": "design",
-        "titleKey": "DESIGN!",
+        "titleKey": "Design",
         "subtitleKey": "pixel ninjas",
         "options": [
           {
-            "id": "websites",
+            "id": "website-design",
             "titleKey": "Website Design",
             "subtitleKey": "crafting user experiences",
-            "link": "https://github.com/rocky-linux/rockylinux.org"
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/web"
           },
           {
-            "id": "graphics",
+            "id": "graphics-design",
             "titleKey": "Graphics Design",
             "subtitleKey": "visual storytelling",
             "link": "https://chat.rockylinux.org/rocky-linux/channels/design"
           },
           {
-            "id": "ux",
+            "id": "ux-design",
             "titleKey": "UX Design",
             "subtitleKey": "making things intuitive",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/ux"
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/design"
           }
         ]
       },
       {
-        "id": "coding",
-        "titleKey": "CODING",
-        "subtitleKey": "hacking the gibson",
+        "id": "web",
+        "titleKey": "Web",
+        "subtitleKey": "javascript junkies",
         "options": [
           {
-            "id": "web-dev",
+            "id": "web-development",
             "titleKey": "Web Development",
             "subtitleKey": "building the web presence",
-            "link": "https://github.com/rocky-linux/rockylinux.org"
-          },
+            "link": "https://chat.rockylinux.org/rocky-linux/channels/web"
+          }
+        ]
+      },
+      {
+        "id": "infrastructure",
+        "titleKey": "Infrastructure",
+        "subtitleKey": "we like waffles",
+        "options": [
           {
-            "id": "system",
+            "id": "system-programming",
             "titleKey": "System Programming",
             "subtitleKey": "core system development",
-            "link": "https://github.com/rocky-linux/rocky"
+            "link": "https://infra.rocky.page/"
           },
           {
             "id": "automation",
             "titleKey": "Automation",
             "subtitleKey": "making things efficient",
-            "link": "https://github.com/rocky-linux/ansible-role-rocky-tools"
+            "link": "https://infra.rocky.page/"
           }
         ]
       },
       {
         "id": "documentation",
-        "titleKey": "DOCUMENTATION",
+        "titleKey": "Documentation",
         "subtitleKey": "wordsmithery",
         "options": [
           {
             "id": "technical-writing",
             "titleKey": "Technical Writing",
             "subtitleKey": "explaining the complex",
-            "link": "https://github.com/rocky-linux/documentation"
+            "link": "https://github.com/rocky-linux/documentation/blob/main/README.md"
           },
           {
             "id": "translation",
             "titleKey": "Translation",
             "subtitleKey": "breaking language barriers",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/translation"
+            "link": "https://github.com/rocky-linux/documentation/blob/main/README.md#translation"
           }
         ]
       },
       {
         "id": "community",
-        "titleKey": "COMMUNITY",
+        "titleKey": "Community",
         "subtitleKey": "connecting the dots",
         "options": [
           {
             "id": "advocacy",
             "titleKey": "Advocacy",
             "subtitleKey": "spreading the word",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/community"
+            "link": "https://wiki.rockylinux.org/team/community/"
           },
           {
-            "id": "support",
+            "id": "user-support",
             "titleKey": "User Support",
             "subtitleKey": "helping others succeed",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/support"
+            "link": "https://wiki.rockylinux.org/team/community/"
           },
           {
-            "id": "events",
+            "id": "event-organization",
             "titleKey": "Event Organization",
             "subtitleKey": "bringing people together",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/events"
+            "link": "https://wiki.rockylinux.org/team/community/"
           }
         ]
       },
       {
-        "id": "qa",
-        "titleKey": "TESTING",
+        "id": "testing",
+        "titleKey": "Testing",
         "subtitleKey": "if it's not tested, it's broken",
         "options": [
           {
             "id": "bug-hunting",
             "titleKey": "Bug Hunting",
             "subtitleKey": "finding the glitches",
-            "link": "https://github.com/rocky-linux/rocky/issues"
+            "link": "https://testing.rocky.page/"
           },
           {
             "id": "test-automation",
             "titleKey": "Test Automation",
             "subtitleKey": "automated quality assurance",
-            "link": "https://github.com/rocky-linux/testing"
+            "link": "https://testing.rocky.page/"
           }
         ]
       },
       {
-        "id": "packaging",
-        "titleKey": "PACKAGING",
-        "subtitleKey": "building the distribution",
+        "id": "release-engineering",
+        "titleKey": "Release Engineering",
+        "subtitleKey": "emails should have stamps",
         "options": [
           {
             "id": "rpm-packaging",
             "titleKey": "RPM Packaging",
             "subtitleKey": "creating packages",
-            "link": "https://github.com/rocky-linux/rpms"
+            "link": "https://sig-core.rocky.page/"
           },
           {
             "id": "module-building",
             "titleKey": "Module Building",
             "subtitleKey": "composing the distro",
-            "link": "https://chat.rockylinux.org/rocky-linux/channels/packaging"
+            "link": "https://sig-core.rocky.page/"
           }
         ]
       }

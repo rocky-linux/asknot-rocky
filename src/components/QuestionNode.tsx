@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "./Button"
 
 const POSITIVE_RESPONSES = [
   "Sounds awesome!",
@@ -108,14 +109,11 @@ export function QuestionNode({ node }: { node: Node }) {
                 That's all of our teams.
               </h2>
               <p className="text-xl md:text-2xl text-white/70 font-normal tracking-wide">
-                  try starting over and exploring the sub-options. we promise there's something for everyone!
+                try starting over and exploring the sub-options. we promise there's something for everyone!
               </p>
             </div>
             <div className="flex flex-col gap-3 md:gap-4 w-full max-w-md mx-auto">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="py-3 md:py-4 px-6 md:px-8 text-lg md:text-xl font-medium bg-[#111827] hover:bg-[#1f2937] text-white rounded-full transition-colors shadow-lg font-red-hat cursor-pointer"
+              <Button
                 onClick={() => {
                   setCurrentNode(node)
                   setOptionIndex(0)
@@ -125,7 +123,7 @@ export function QuestionNode({ node }: { node: Node }) {
                 }}
               >
                 Start Over
-              </motion.button>
+              </Button>
               <p className="text-sm md:text-base text-white/60 italic mt-4">
                 Not finding something that interests you? Join our{' '}
                 <a 
@@ -160,10 +158,7 @@ export function QuestionNode({ node }: { node: Node }) {
               )}
             </div>
             <div className="flex flex-col gap-3 md:gap-4 w-full max-w-md mx-auto">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="py-3 md:py-4 px-6 md:px-8 text-lg md:text-xl font-medium bg-[#111827] hover:bg-[#1f2937] text-white rounded-full transition-colors shadow-lg font-red-hat cursor-pointer"
+              <Button
                 onClick={() => {
                   if (currentOption.link) {
                     window.open(currentOption.link, '_blank')
@@ -178,11 +173,9 @@ export function QuestionNode({ node }: { node: Node }) {
                 }}
               >
                 {positiveButtonText}
-              </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="py-3 md:py-4 px-6 md:px-8 text-lg md:text-xl font-medium bg-[#DC2626] hover:bg-[#B91C1C] text-white rounded-full transition-colors shadow-lg font-red-hat cursor-pointer"
+              </Button>
+              <Button
+                variant="negative"
                 onClick={() => {
                   if (isLastOption) {
                     if (isMainLevel) {
@@ -203,7 +196,7 @@ export function QuestionNode({ node }: { node: Node }) {
                 }}
               >
                 {negativeButtonText}
-              </motion.button>
+              </Button>
             </div>
           </motion.div>
         )}

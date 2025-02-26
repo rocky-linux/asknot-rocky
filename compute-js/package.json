@@ -1,0 +1,25 @@
+{
+  "name": "asknot-astro-rocky",
+  "version": "0.1.0",
+  "description": "Fastly Compute static site",
+  "author": "you@example.com",
+  "type": "module",
+  "devDependencies": {
+    "@fastly/cli": "^10.14.0",
+    "@fastly/compute-js-static-publish": "6.2.0"
+  },
+  "dependencies": {
+    "@fastly/js-compute": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "fastly compute serve",
+    "deploy": "fastly compute publish",
+    "prebuild": "npx @fastly/compute-js-static-publish --build-static",
+    "build": "js-compute-runtime ./src/index.js ./bin/main.wasm"
+  }
+}

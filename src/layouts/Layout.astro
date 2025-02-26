@@ -1,5 +1,11 @@
 ---
 import "@/styles/global.css";
+import '@fontsource/red-hat-display/400.css';  // Regular
+import '@fontsource/red-hat-display/500.css';  // Medium
+import '@fontsource/red-hat-display/700.css';  // Bold
+import '@fontsource/inter/400.css';            // Regular
+import '@fontsource/inter/500.css';            // Medium
+import '@fontsource/inter/600.css';            // Semi-bold
 
 const { title, description } = Astro.props;
 ---
@@ -18,3 +24,13 @@ const { title, description } = Astro.props;
 		<slot />
 	</body>
 </html>
+
+<style is:global>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Red Hat Display', sans-serif !important;
+    }
+</style>

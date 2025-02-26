@@ -1,0 +1,27 @@
+name: Preview Pull Requests
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}-${{ github.workflow}}
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+jobs:
+  deploy:
+    environment: Preview
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install dependencies
+        run: npm install
+
+      - name: build site
+        run: npm run build
+
+      - uses: fastly/compute-actions/preview@v11
+        with:
+          project_directory: compute-js
+          fastly-api-token: ${{ secrets.FASTLY_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

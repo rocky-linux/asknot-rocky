@@ -33,6 +33,25 @@ const rootNode = {
 					  </h1>
 					</div>
 				</div>
+				<noscript>
+					<div class="text-center space-y-8">
+						<div class="space-y-2 md:space-y-4">
+							<h2 class="text-base md:text-2xl text-white/80 font-normal font-red-hat tracking-wide px-4">
+								JavaScript Required
+							</h2>
+							<p class="text-white/80 mt-4">
+								This interactive guide requires JavaScript to function. Please enable JavaScript for this site or visit our{' '}
+								<a 
+									href="https://chat.rockylinux.org" 
+									class="text-white hover:text-white/80 underline underline-offset-2"
+								>
+									Mattermost instance
+								</a>
+								{' '}for assistance in finding the right team.
+							</p>
+						</div>
+					</div>
+				</noscript>
 				<div>
 					<QuestionNode node={rootNode} client:load />
 				</div>

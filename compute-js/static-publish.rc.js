@@ -25,7 +25,7 @@ const config = {
     staticItems: ["_astro", "images"],
     compression: [ 'br', 'gzip' ],
     spaFile: false,
-    notFoundPageFile: false, 
+    notFoundPageFile: "/404.html", 
     autoExt: [],
     autoIndex: ["index.html","index.htm"],
   },

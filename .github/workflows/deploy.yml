@@ -41,7 +41,7 @@ jobs:
         MATTERMOST_WEBHOOK_URL: ${{ secrets.MM_WEBHOOK_URL }}
         MATTERMOST_CHANNEL: web
         TEXT: |
-          [Deployment](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) was completed :white_check_mark:
+          [join.rockylinux.org Deployment](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) was completed :white_check_mark:
         MATTERMOST_USERNAME: "Github"
 
     - name: Notify documentation channel about deployment Failure
@@ -51,5 +51,5 @@ jobs:
         MATTERMOST_WEBHOOK_URL: ${{ secrets.MM_WEBHOOK_URL }}
         MATTERMOST_CHANNEL: web
         TEXT: |
-          [Deployment](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) failed :x:
+          [join.rockylinux.org Deployment](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) failed :x:
         MATTERMOST_USERNAME: "Github"

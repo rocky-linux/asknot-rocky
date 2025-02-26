@@ -1,0 +1,12 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["infrastructure@rockylinux.org"]
+description = "What Can I Do For Rocky Linux"
+language = "javascript"
+manifest_version = 2
+name = "asknot-rocky"
+service_id = "lir7oRwy5qHaRLRThrTql7"
+
+[scripts]
+  build = "npm run build"

@@ -18,3 +18,23 @@ npm run dev
 
 3. Open your browser and navigate to `http://localhost:4321`.
 
+## What's Inside
+
+The project structure is organized as follows:
+
+```
+asknot-rocky/
+├── src/                # Source files
+│   ├── components/    # React components
+│   ├── layouts/       # Page layouts
+│   ├── pages/        # Page components
+│   └── styles/       # CSS and styling files
+├── public/            # Static assets
+└── data/             # Configuration and content data
+```
+
+Key files and directories:
+- `src/pages/index.astro` – Main entry point and landing page
+- `data/questions.json` – Question tree configuration
+- `src/components/question-node.tsx` – Core question navigation logic
+- `src/styles/global.css` – Global styles and theming

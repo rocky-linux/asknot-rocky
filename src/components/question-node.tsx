@@ -4,25 +4,25 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const POSITIVE_RESPONSES = [
-  "Sounds Awesome!",
-  "Yes, Please!",
-  "Let's Do It!",
-  "Count Me In!",
+  "Sounds awesome!",
+  "Yes, please!",
+  "Let's do it!",
+  "Count me in!",
   "Absolutely!",
-  "That's Perfect!",
-  "I'm In!",
-  "Show Me More!",
+  "That's perfect!",
+  "I'm in!",
+  "Show me more!",
 ]
 
 const NEGATIVE_RESPONSES = [
   "Not on your life!",
-  "No Thanks!",
+  "No thanks!",
   "Pass!",
-  "Next Option!",
-  "Not For Me!",
-  "Skip This!",
+  "Next option!",
+  "Not for me!",
+  "Skip this!",
   "Nope!",
-  "Let's Try Something Else!",
+  "Let's try something else!",
 ]
 
 const getRandomItem = (array: string[]) => {

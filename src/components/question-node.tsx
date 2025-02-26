@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const POSITIVE_RESPONSES = [
@@ -37,6 +37,36 @@ interface Node {
   link?: string
 }
 
+const findNodeById = (node: Node, id: string): { currentNode: Node, parentNode: Node | null, optionIndex: number } | null => {
+  if (node.options) {
+    const directOptionIndex = node.options.findIndex(option => option.id === id)
+    if (directOptionIndex !== -1) {
+      const targetNode = node.options[directOptionIndex]
+      if (targetNode.options) {
+        return {
+          currentNode: targetNode,
+          parentNode: node,
+          optionIndex: 0
+        }
+      }
+      return {
+        currentNode: node,
+        parentNode: null,
+        optionIndex: directOptionIndex
+      }
+    }
+
+    for (const option of node.options) {
+      if (option.options) {
+        const found = findNodeById(option, id)
+        if (found) return found
+      }
+    }
+  }
+
+  return null
+}
+
 export function QuestionNode({ node }: { node: Node }) {
   const [currentNode, setCurrentNode] = useState(node)
   const [optionIndex, setOptionIndex] = useState(0)
@@ -48,6 +78,18 @@ export function QuestionNode({ node }: { node: Node }) {
   const currentOption = currentNode.options?.[optionIndex]
   const isLastOption = currentNode.options && optionIndex + 1 >= currentNode.options.length
   const isMainLevel = currentNode === node
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1)
+    if (hash) {
+      const found = findNodeById(node, hash)
+      if (found) {
+        setCurrentNode(found.currentNode)
+        setParentNode(found.parentNode)
+        setOptionIndex(found.optionIndex)
+      }
+    }
+  }, [node])
 
   return (
     <div className="space-y-8">

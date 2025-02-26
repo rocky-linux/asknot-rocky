@@ -2,6 +2,9 @@ name: Deploy AskNot-Rocky
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'README.md'
+      
 
 jobs:
   deploy:

@@ -8,26 +8,26 @@
 
 /** @type {import('@fastly/compute-js-static-publish').StaticPublisherConfig} */
 const config = {
-  rootDir: "../dist",
-  staticContentRootDir: "./static-publisher",
+  rootDir: '../dist',
+  staticContentRootDir: './static-publisher',
   // kvStoreName: false,
   // excludeDirs: [ './node_modules' ],
   // excludeDotFiles: true,
   // includeWellKnown: true,
   // contentAssetInclusionTest: (filename) => true,
-  // contentCompression: [ 'br', 'gzip' ], // For this config value, default is [] if kvStoreName is null. 
+  // contentCompression: [ 'br', 'gzip' ], // For this config value, default is [] if kvStoreName is null.
   // moduleAssetInclusionTest: (filename) => false,
   // contentTypes: [
   //   { test: /.custom$/, contentType: 'application/x-custom', text: false },
   // ],
   server: {
-    publicDirPrefix: "",
-    staticItems: ["_astro", "images"],
-    compression: [ 'br', 'gzip' ],
+    publicDirPrefix: '',
+    staticItems: ['_astro', 'images'],
+    compression: ['br', 'gzip'],
     spaFile: false,
-    notFoundPageFile: "/404.html", 
+    notFoundPageFile: '/404.html',
     autoExt: [],
-    autoIndex: ["index.html","index.htm"],
+    autoIndex: ['index.html', 'index.htm'],
   },
 };
 

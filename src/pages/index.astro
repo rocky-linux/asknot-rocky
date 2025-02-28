@@ -1,29 +1,30 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import questionsData from "@/questions/default.json";
-import { QuestionNode } from '@/components/QuestionNode';
-import PageHeader from '@/components/PageHeader.astro';
-import Footer from '@/components/Footer.astro';
+/**
+ * Main Landing Page
+ * 
+ * This is the entry point of the application that guides users through
+ * different ways they can contribute to Rocky Linux. It features an
+ * interactive question-based navigation system.
+ */
 
-const rootNode = {
-	id: "root",
-	titleKey: "home.areaOfInterest",
-	title: "What's your area of interest?",
-	subtitleKey: "home.areaOfInterest",
-	options: questionsData.tree.options
-}
+import Layout from '@/layouts/Layout.astro';
+import { QuestionNode } from '@/components/QuestionNode';
+import PageHeader from '@/components/PageHeader';
+import Footer from '@/components/Footer';
 ---
 
-<Layout title="What can I do for Rocky Linux?" description="Find out how you can contribute to Rocky Linux!">
-	<main class="min-h-screen flex flex-col bg-gradient-to-b from-[#10B981] to-[#0a8f63] p-4 text-white">
-		<div class="flex-1 flex items-center justify-center">
-			<div class="w-full max-w-4xl space-y-8 md:space-y-12 p-4 md:p-8">
-				<PageHeader
-					subtitle="Want to help Rocky Linux? Tell me..."
-					title="What's your area of interest?"
-				/>
+<Layout 
+	title="What can I do for Rocky Linux?" 
+	description="Find out how you can contribute to Rocky Linux - an interactive guide to help you find the perfect way to get involved with the community."
+>
+	<div class="min-h-screen flex flex-col bg-gradient-to-b from-[#10B981] to-[#0a8f63]">
+		<main class="flex-1 flex items-center p-4 text-white" role="main">
+			<div class="w-full max-w-4xl mx-auto space-y-12 md:space-y-16 p-4 md:p-8">
+				<PageHeader client:only="react" />
+				
+				{/* Fallback content for users with JavaScript disabled */}
 				<noscript>
-					<div class="text-center space-y-8">
+					<section class="text-center space-y-8" aria-label="JavaScript requirement notice">
 						<div class="space-y-2 md:space-y-4">
 							<h2 class="text-base md:text-2xl text-white/80 font-normal font-red-hat tracking-wide px-4">
 								JavaScript Required
@@ -33,19 +34,23 @@ const rootNode = {
 								<a 
 									href="https://chat.rockylinux.org" 
 									class="text-white hover:text-white/80 underline underline-offset-2"
+									rel="noopener noreferrer"
+									aria-label="Rocky Linux Mattermost chat instance"
 								>
 									Mattermost instance
 								</a>
 								{' '}for assistance in finding the right team.
 							</p>
 						</div>
-					</div>
+					</section>
 				</noscript>
-				<div>
-					<QuestionNode node={rootNode} client:load />
-				</div>
+
+				{/* Interactive question tree component */}
+				<section class="mt-8 md:mt-12" aria-label="Contribution path finder">
+					<QuestionNode client:only="react" />
+				</section>
 			</div>
-		</div>
-		<Footer />
-	</main>
+		</main>
+		<Footer client:only="react" />
+	</div>
 </Layout>

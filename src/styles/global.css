@@ -1,1 +1,9 @@
+/**
+ * Global Styles
+ * 
+ * This file imports Tailwind CSS for use throughout the application.
+ * All global styles are managed through Tailwind's utility classes
+ * and component styles are handled locally in their respective files.
+ */
+
 @import "tailwindcss";

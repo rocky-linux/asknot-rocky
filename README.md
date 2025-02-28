@@ -34,6 +34,7 @@ asknot-rocky/
 ```
 
 Key files and directories:
+
 - `src/pages/index.astro` – Main entry point and landing page
 - `questions/default.json` – Question tree configuration
 - `src/components/QuestionNode.tsx` – Core question navigation logic

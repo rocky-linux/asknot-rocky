@@ -1,4 +1,18 @@
 ---
+/**
+ * Base Layout Component
+ * 
+ * This is the main layout component used across all pages. It provides:
+ * - Basic HTML structure
+ * - Meta tags for SEO
+ * - Font imports (Red Hat Display and Inter)
+ * - Global styles
+ * 
+ * @component
+ * @param {string} title - The page title to be used in the <title> tag
+ * @param {string} description - Meta description for SEO
+ */
+
 import "@/styles/global.css";
 import '@fontsource/red-hat-display/400.css';  // Regular
 import '@fontsource/red-hat-display/500.css';  // Medium
@@ -6,6 +20,11 @@ import '@fontsource/red-hat-display/700.css';  // Bold
 import '@fontsource/inter/400.css';            // Regular
 import '@fontsource/inter/500.css';            // Medium
 import '@fontsource/inter/600.css';            // Semi-bold
+
+interface Props {
+	title: string;
+	description: string;
+}
 
 const { title, description } = Astro.props;
 ---

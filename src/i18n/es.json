@@ -1,0 +1,162 @@
+{
+  "home": {
+    "title": "¿Qué puedo hacer por Rocky Linux?",
+    "description": "¡Descubre cómo puedes contribuir a Rocky Linux!",
+    "areaOfInterest": "¿Cuál es tu área de interés?",
+    "subtitle": "¿Quieres ayudar a Rocky Linux? Dime...",
+    "noscript": {
+      "title": "JavaScript Requerido",
+      "description": "Esta guía interactiva requiere JavaScript para funcionar. Por favor, habilita JavaScript para este sitio o visita nuestra",
+      "link": "instancia de Mattermost",
+      "suffix": "para obtener ayuda para encontrar el equipo adecuado."
+    },
+    "endFlow": {
+      "title": "¡Esos son todos nuestros equipos!",
+      "description": "Intenta comenzar de nuevo y explorar las sub-opciones. ¡Prometemos que hay algo para todos!",
+      "startOver": "Comenzar de Nuevo",
+      "notFound": "¿No encuentras algo que te interese? Únete a nuestra",
+      "mattermost": "instancia de Mattermost",
+      "help": "¡y te ayudaremos!"
+    },
+    "responses": {
+      "positive": [
+        "¡Suena genial!",
+        "¡Sí, por favor!",
+        "¡Hagámoslo!",
+        "¡Cuenten conmigo!",
+        "¡Absolutamente!",
+        "¡Es perfecto!",
+        "¡Me apunto!",
+        "¡Muéstrame más!"
+      ],
+      "negative": [
+        "¡Ni en sueños!",
+        "¡No, gracias!",
+        "¡Paso!",
+        "¡Siguiente opción!",
+        "¡No es lo mío!",
+        "¡Saltar esto!",
+        "¡Nop!",
+        "¡Probemos otra cosa!"
+      ]
+    }
+  },
+  "404": {
+    "title": "404 - Página No Encontrada",
+    "description": "La página que buscas no existe",
+    "subtitle": "¡Ups! Página no encontrada",
+    "message": "La página que buscas no existe. Volvamos al camino correcto.",
+    "returnHome": "Volver al Inicio"
+  },
+  "footer": {
+    "generatedBy": "Generado por",
+    "inspiredBy": "Proyecto inspirado por"
+  },
+  "languageSelector": {
+    "label": "Seleccionar idioma"
+  },
+  "questions": {
+    "design": {
+      "title": "Diseño",
+      "subtitle": "ninjas del pixel",
+      "options": {
+        "website": {
+          "title": "Diseño Web",
+          "subtitle": "creando experiencias de usuario"
+        },
+        "graphics": {
+          "title": "Diseño Gráfico",
+          "subtitle": "narrando visualmente"
+        },
+        "ux": {
+          "title": "Diseño UX",
+          "subtitle": "haciendo las cosas intuitivas"
+        }
+      }
+    },
+    "web": {
+      "title": "Web",
+      "subtitle": "adictos a javascript",
+      "options": {
+        "development": {
+          "title": "Desarrollo Web",
+          "subtitle": "construyendo la presencia web"
+        }
+      }
+    },
+    "infrastructure": {
+      "title": "Infraestructura",
+      "subtitle": "nos gustan los waffles",
+      "options": {
+        "system": {
+          "title": "Programación de Sistemas",
+          "subtitle": "desarrollo del sistema central"
+        },
+        "automation": {
+          "title": "Automatización",
+          "subtitle": "haciendo las cosas eficientes"
+        }
+      }
+    },
+    "documentation": {
+      "title": "Documentación",
+      "subtitle": "el arte de las palabras",
+      "options": {
+        "technical": {
+          "title": "Escritura Técnica",
+          "subtitle": "explicando lo complejo"
+        },
+        "translation": {
+          "title": "Traducción",
+          "subtitle": "rompiendo barreras lingüísticas"
+        }
+      }
+    },
+    "community": {
+      "title": "Comunidad",
+      "subtitle": "conectando los puntos",
+      "options": {
+        "advocacy": {
+          "title": "Promoción",
+          "subtitle": "difundiendo el mensaje"
+        },
+        "support": {
+          "title": "Soporte al Usuario",
+          "subtitle": "ayudando a otros a tener éxito"
+        },
+        "events": {
+          "title": "Organización de Eventos",
+          "subtitle": "uniendo a la gente"
+        }
+      }
+    },
+    "testing": {
+      "title": "Testing",
+      "subtitle": "si no está probado, está roto",
+      "options": {
+        "bugs": {
+          "title": "Búsqueda de Errores",
+          "subtitle": "encontrando los fallos"
+        },
+        "automation": {
+          "title": "Automatización de Pruebas",
+          "subtitle": "aseguramiento de calidad automatizado"
+        }
+      }
+    },
+    "release": {
+      "title": "Ingeniería de Lanzamientos",
+      "subtitle": "los correos deberían tener sellos",
+      "options": {
+        "rpm": {
+          "title": "Empaquetado RPM",
+          "subtitle": "creando paquetes"
+        },
+        "modules": {
+          "title": "Construcción de Módulos",
+          "subtitle": "componiendo la distribución"
+        }
+      }
+    }
+  }
+}

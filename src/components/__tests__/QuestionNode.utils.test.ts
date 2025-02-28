@@ -1,14 +1,21 @@
 import { describe, it, expect } from 'vitest';
+
 import { questionTree } from '../../questions/questions';
+
+interface QuestionNode {
+  id: string;
+  link?: string | null;
+  options?: QuestionNode[];
+}
 
 // Import the utility functions from QuestionNode
 // Since they're not exported, we'll recreate them here for testing
 const findNodeById = (
-  node: any,
+  node: QuestionNode,
   id: string
-): { currentNode: any; parentNode: any | null; optionIndex: number } | null => {
+): { currentNode: QuestionNode; parentNode: QuestionNode | null; optionIndex: number } | null => {
   if (node.options) {
-    const directOptionIndex = node.options.findIndex((option: any) => option.id === id);
+    const directOptionIndex = node.options.findIndex(option => option.id === id);
     if (directOptionIndex !== -1) {
       const targetNode = node.options[directOptionIndex];
       if (targetNode.options) {
@@ -91,7 +98,7 @@ describe('QuestionNode Utilities', () => {
     it('returns random items with roughly even distribution', () => {
       const array = ['a', 'b', 'c'];
       const counts: Record<string, number> = { a: 0, b: 0, c: 0 };
-      
+
       // Run 1000 iterations to test distribution
       for (let i = 0; i < 1000; i++) {
         const result = getRandomItem(array);
@@ -106,4 +113,4 @@ describe('QuestionNode Utilities', () => {
       });
     });
   });
-}); 
+});

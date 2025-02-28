@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
+
 import { questionTree } from '../questions';
+
+interface QuestionNode {
+  id: string;
+  link?: string | null;
+  options?: QuestionNode[];
+}
 
 describe('Question Tree', () => {
   it('has a root node with correct structure', () => {
@@ -17,12 +24,12 @@ describe('Question Tree', () => {
       'documentation',
       'community',
       'testing',
-      'release'
+      'release',
     ]);
   });
 
   it('has valid links for leaf nodes', () => {
-    const validateLinks = (options: any[]) => {
+    const validateLinks = (options: QuestionNode[]) => {
       options.forEach(option => {
         if (option.link) {
           expect(option.link).toMatch(/^https?:\/\//); // Should be a valid URL
@@ -59,7 +66,7 @@ describe('Question Tree', () => {
 
   it('has no duplicate IDs across the tree', () => {
     const ids = new Set<string>();
-    const checkForDuplicates = (options: any[]) => {
+    const checkForDuplicates = (options: QuestionNode[]) => {
       options.forEach(option => {
         expect(ids.has(option.id)).toBe(false);
         ids.add(option.id);
@@ -75,10 +82,10 @@ describe('Question Tree', () => {
   it('has consistent link structure for each category', () => {
     questionTree.options.forEach(category => {
       expect(category.link).toBeNull();
-      category.options.forEach((subOption: any) => {
+      category.options?.forEach(subOption => {
         expect(subOption.link).toBeDefined();
         expect(typeof subOption.link).toBe('string');
       });
     });
   });
-}); 
+});

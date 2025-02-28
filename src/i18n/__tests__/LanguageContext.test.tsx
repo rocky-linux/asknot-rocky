@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
+
 import { useLanguage, setLanguage, languageStore } from '../LanguageContext';
+
+import type { LanguageCode } from '../types';
 
 // Test component that uses the language hook
 const TestComponent = () => {
@@ -58,6 +61,6 @@ describe('LanguageContext', () => {
   });
 
   it('throws error for unsupported language', () => {
-    expect(() => setLanguage('fr' as any)).toThrow('Unsupported language: fr');
+    expect(() => setLanguage('fr' as LanguageCode)).toThrow('Unsupported language: fr');
   });
-}); 
+});

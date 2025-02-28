@@ -11,20 +11,28 @@
 import { useStore } from '@nanostores/react';
 import { atom } from 'nanostores';
 
-import en from './en.json';
-import es from './es.json';
 import { LANGUAGE_NAMES } from './types';
 
 import type { Translations, LanguageCode } from './types';
+
+// Dynamically import all language files
+const languageModules = import.meta.glob<{ default: Translations }>('./*.json', { eager: true });
 
 /**
  * Map of language codes to their translation data
  * @const languages
  */
-const languages: Record<LanguageCode, Translations> = {
-  en,
-  es,
-} as const;
+const languages: Record<LanguageCode, Translations> = Object.entries(languageModules).reduce(
+  (acc, [path, module]) => {
+    // Extract language code from file path (e.g., './en.json' -> 'en')
+    const langCode = path.match(/\.\/(\w+)\.json/)?.[1] as LanguageCode;
+    if (langCode && langCode in LANGUAGE_NAMES) {
+      acc[langCode] = module.default;
+    }
+    return acc;
+  },
+  {} as Record<LanguageCode, Translations>
+);
 
 /**
  * Default language to use when no preference is stored
@@ -91,7 +99,7 @@ function getInitialLanguage(): LanguageCode {
 
 // Create stores for reactive state management
 export const languageStore = atom<LanguageCode>(DEFAULT_LANGUAGE);
-export const translationsStore = atom<Translations>(en);
+export const translationsStore = atom<Translations>(languages[DEFAULT_LANGUAGE]);
 
 // Initialize language and translations
 if (typeof window !== 'undefined') {

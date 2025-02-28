@@ -9,20 +9,11 @@ import React from 'react';
 
 import { useLanguage } from '@/i18n/LanguageContext';
 
-/**
- * Available languages in the application
- * Add new languages here to support additional translations
- */
-const languages = {
-  en: 'English',
-  es: 'Español',
-} as const;
-
 export function LanguageSelector() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, availableLanguages } = useLanguage();
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLang = e.target.value as keyof typeof languages;
+    const newLang = e.target.value as keyof typeof availableLanguages;
     setLanguage(newLang);
   };
 
@@ -50,7 +41,7 @@ export function LanguageSelector() {
           className="bg-white/15 text-white text-sm pl-10 pr-8 py-2 rounded-lg appearance-none cursor-pointer hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/30"
           aria-label="Select language"
         >
-          {Object.entries(languages).map(([code, name]) => (
+          {Object.entries(availableLanguages).map(([code, name]) => (
             <option key={code} value={code} className="bg-[#111827] text-white">
               {name}
             </option>

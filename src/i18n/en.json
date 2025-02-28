@@ -92,7 +92,7 @@
           "title": "System Programming",
           "subtitle": "core system development"
         },
-        "automation": {
+        "infra-automation": {
           "title": "Automation",
           "subtitle": "making things efficient"
         }
@@ -138,7 +138,7 @@
           "title": "Bug Hunting",
           "subtitle": "finding the glitches"
         },
-        "automation": {
+        "test-automation": {
           "title": "Test Automation",
           "subtitle": "automated quality assurance"
         }

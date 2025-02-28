@@ -92,7 +92,7 @@
           "title": "Programación de Sistemas",
           "subtitle": "desarrollo del sistema central"
         },
-        "automation": {
+        "infra-automation": {
           "title": "Automatización",
           "subtitle": "haciendo las cosas eficientes"
         }
@@ -138,7 +138,7 @@
           "title": "Búsqueda de Errores",
           "subtitle": "encontrando los fallos"
         },
-        "automation": {
+        "test-automation": {
           "title": "Automatización de Pruebas",
           "subtitle": "aseguramiento de calidad automatizado"
         }

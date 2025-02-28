@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run tests
+npm run test:precommit
+
+# Run type checking
+npm run typecheck
+
+# Run lint-staged
+npx lint-staged
+
+# Check formatting
+npm run format:check
+
+# Run linting
+npm run lint
+
+# If everything passes, proceed with the commit

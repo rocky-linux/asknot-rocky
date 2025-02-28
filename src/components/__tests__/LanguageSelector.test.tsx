@@ -10,6 +10,10 @@ vi.mock('@/i18n/LanguageContext', () => ({
     language: 'en',
     setLanguage: mockSetLanguage,
     translations: {},
+    availableLanguages: {
+      en: 'English',
+      es: 'Español',
+    },
   }),
 }));
 

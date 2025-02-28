@@ -16,7 +16,7 @@ Thank you for your interest in contributing to asknot-rocky! This guide will hel
 
 ## Code of Conduct
 
-By participating in this project, you are expected to uphold our Code of Conduct, which promotes a respectful and inclusive environment for all contributors.
+By participating in this project, you are expected to uphold our [Code of Conduct](https://rockylinux.org/about/coc), which promotes a respectful and inclusive environment for all contributors.
 
 ## Getting Started
 

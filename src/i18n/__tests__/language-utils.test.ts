@@ -131,4 +131,4 @@ describe('Language Utilities', () => {
       expect(getInitialLanguage()).toBe('en');
     });
   });
-}); 
+});

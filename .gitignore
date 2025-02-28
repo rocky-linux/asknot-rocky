@@ -22,3 +22,29 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Cache directories
+.eslintcache
+.prettiercache
+.stylelintcache
+*.tsbuildinfo
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# VSCode settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# Vitest
+__snapshots__/
+*.snap

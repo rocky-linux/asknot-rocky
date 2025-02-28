@@ -8,6 +8,7 @@ Thank you for your interest in contributing to asknot-rocky! This guide will hel
 - [Getting Started](#getting-started)
 - [Development Setup](#development-setup)
 - [Making Changes](#making-changes)
+- [Branch Management Guidelines](#branch-management-guidelines)
 - [Submitting Changes](#submitting-changes)
 - [Code Style](#code-style)
 - [Testing](#testing)
@@ -58,6 +59,48 @@ By participating in this project, you are expected to uphold our [Code of Conduc
    npm run typecheck   # Run TypeScript checks
    npm run test       # Run tests
    ```
+
+## Branch Management Guidelines
+
+We follow a strict branch management policy to maintain code quality and project organization:
+
+1. **Never Commit Directly to Main**
+
+   - All changes must go through feature branches
+   - Direct commits to the main branch are prohibited
+   - Main branch is protected and requires pull request reviews
+
+2. **Feature Branch Naming Convention**
+
+   - Use the following prefixes based on the type of change:
+     - `feature/` - For new features or enhancements
+     - `fix/` - For bug fixes
+     - `docs/` - For documentation updates
+     - `refactor/` - For code refactoring
+     - `test/` - For adding or updating tests
+     - `chore/` - For maintenance tasks
+   - Follow the prefix with a descriptive name using kebab-case
+   - Examples:
+     ```
+     feature/add-dark-mode
+     fix/language-selector-bug
+     docs/update-readme
+     refactor/question-tree-logic
+     test/add-i18n-tests
+     chore/update-dependencies
+     ```
+
+3. **Branch Lifecycle**
+
+   - Create branches from the latest main
+   - Keep branches focused and single-purpose
+   - Delete branches after merging
+   - Regularly update feature branches with changes from main
+
+4. **Branch Hygiene**
+   - Keep branches short-lived (ideally less than a week)
+   - Regularly rebase long-running branches on main
+   - Clean up stale branches that are no longer needed
 
 ## Submitting Changes
 

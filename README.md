@@ -1,40 +1,49 @@
 # asknot-rocky
 
-The official source for join.rockylinux.org, inspired by [asknot-ng](https://github.com/fedora-infra/asknot-ng).
+The official source for join.rockylinux.org, inspired by [asknot-ng](https://github.com/fedora-infra/asknot-ng). This interactive guide helps newcomers find their place in the Rocky Linux community by asking a series of questions about their interests and skills.
 
-## Start Development Server
+## Features
 
-1. Install dependencies via NPM.
+- 🌍 Multilingual support (English, Spanish, and more)
+- 🎯 Interactive question-based navigation
+- 🎨 Modern, responsive design
+- ⚡ Built with Astro and React
+- 🔍 Helps match contributors with teams based on their interests
 
-```bash
-npm install
-```
+## Quick Start
 
-2. Start the development server.
+1. Install dependencies:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm install
+   ```
 
-3. Open your browser and navigate to `http://localhost:4321`.
+2. Start the development server:
 
-## What's Inside
+   ```bash
+   npm run dev
+   ```
 
-The project structure is organized as follows:
+3. Visit `http://localhost:4321` in your browser.
 
-```
-asknot-rocky/
-├── src/ # Source files
-│ ├── components/ # React and Astro components
-│ ├── layouts/ # Page layouts
-│ ├── pages/ # Astro pages
-│ ├── questions/ # Question tree data
-│ └── styles/ # Global styles
-├── public/ # Static assets
-```
+## Contributing
 
-Key files and directories:
+We welcome contributions! Whether you want to add new features, fix bugs, improve documentation, or add translations, your help is appreciated.
 
-- `src/pages/index.astro` – Main entry point and landing page
-- `questions/default.json` – Question tree configuration
-- `src/components/QuestionNode.tsx` – Core question navigation logic
+Please see our [Contributing Guide](CONTRIBUTING.md) for detailed information about:
+
+- Setting up your development environment
+- Making changes
+- Adding translations
+- Submitting pull requests
+- Code style and testing
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Need Help?
+
+- Check existing [issues](https://github.com/rocky-linux/asknot-rocky/issues)
+- Create a new issue
+- Join the Rocky Linux community channels

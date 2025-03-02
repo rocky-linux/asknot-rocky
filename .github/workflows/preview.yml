@@ -5,7 +5,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
 jobs:
-  deploy:
+  preview:
     environment: Preview
     runs-on: ubuntu-latest
     defaults:
@@ -21,6 +21,8 @@ jobs:
         run: npm run build
 
       - uses: fastly/compute-actions/preview@v11
+        env:
+          FASTLY_API_TOKEN: ${{ secrets.FASTLY_API_TOKEN }}
         with:
           project_directory: compute-js
           fastly-api-token: ${{ secrets.FASTLY_API_KEY }}

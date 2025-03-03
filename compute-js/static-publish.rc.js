@@ -22,7 +22,7 @@ const config = {
   // ],
   server: {
     publicDirPrefix: '',
-    staticItems: ['_astro', 'images'],
+    staticItems: ['/_astro/', '/images/', '/favicon.svg'],
     compression: ['br', 'gzip'],
     spaFile: false,
     notFoundPageFile: '/404.html',
